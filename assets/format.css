@@ -62,6 +62,7 @@ ul{
   border: 1px solid #D55C5F;
   color: #D55C5F;
   box-shadow: none;
+  max-width: 700px;
 }
 .name{
 max-width: 300px;
