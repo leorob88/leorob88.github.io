@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Contacts</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/format.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+        <script type="text/javascript">
+            (function() {
+                // https://dashboard.emailjs.com/admin/integration
+                emailjs.init('user_ndFTzzAcRMC6qfWU5uYet');
+            })();
+        </script>
+        <script type="text/javascript">
+            window.onload = function() {
+                document.getElementById('contact-form').addEventListener('submit', function(event) {
+                    event.preventDefault();
+                    // generate a five digit number for the contact_number variable
+                    this.contact_number.value = Math.random() * 100000 | 0;
+                    // these IDs from the previous steps
+                    emailjs.sendForm('service_9rc7so8', 'template_wkx9xyy', this)
+                        .then(function() {
+                            console.log('SUCCESS!');
+                        }, function(error) {
+                            console.log('FAILED...', error);
+                        });
+                });
+            }
+        </script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12"><h1>You can contact me:</h1></div>
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+          <ul>
+            <li><p>On my <a href="https://www.facebook.com/sunbro.gilgamesh" target="_blank"><i class="fab fa-facebook blue"></i></a><strong> Facebook</strong> page</p></li>
+            <li><p>Filling this form:</p>
+            <form id="contact-form" class="contact">
+              <input type="hidden" name="contact_number">
+              <label>Name</label>
+              <input type="text" name="from_name" class="name">
+              <br>
+              <label>Email</label>
+              <input type="email" name="from_email" class="email" placeholder="account@mailservice.com">
+              <br>
+              <label>Message</label>
+              <textarea name="message" class="message"></textarea>
+              <br>
+              <input type="submit" value="Send" class="send">
+            </form></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+</body>
+</html>
