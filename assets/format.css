@@ -57,12 +57,12 @@ ul{
   justify-content: flex-start;
   flex-direction: column;
   flex-wrap: wrap;
+  max-width: 700px;
 }
 .contact input[type='email']:invalid {
   border: 1px solid #D55C5F;
   color: #D55C5F;
   box-shadow: none;
-  max-width: 700px;
 }
 .name{
 max-width: 300px;
