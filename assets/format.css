@@ -57,6 +57,7 @@ ul{
   justify-content: center;
   flex-direction: column;
   flex-wrap: wrap;
+  max-width: 700px;
 }
 .contact input[type='email']:invalid {
   border: 1px solid #D55C5F;
