@@ -88,9 +88,7 @@ max-width: 300px;
 .send{
   align-self: center;
 }
-.centered{
-  justify-content: center;
-}
+
 /*Small devices (landscape phones or smaller)*/
 @media (max-width: 767px) {
   .welcome{
