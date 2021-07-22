@@ -21,7 +21,7 @@ h1{
   color: orange;
 }
 a {
-  color: black;
+  color: white;
   text-decoration: none;
 }
 a:hover {
@@ -43,9 +43,21 @@ ul{
   display: flex;
   justify-content: flex-start;
 }
-.content > .col-xl-3, .col-lg-6, .col-md-6{
-  display: flex;
-  justify-content: center;
+.content{
+  text-align: center;
+  transition: transform .2s;
+}
+.content > a:hover{
+  text-decoration: none;
+}
+a > img{
+  width: 85%;
+  height: 85%;
+  object-fit: contain;
+}
+.content:hover {
+  transform: scale(1.2); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  z-index: 1;
 }
 .contact{
   background-color: #F9F9F9;
@@ -76,7 +88,9 @@ max-width: 300px;
 .send{
   align-self: center;
 }
-
+.centered{
+  justify-content: center;
+}
 /*Small devices (landscape phones or smaller)*/
 @media (max-width: 767px) {
   .welcome{
@@ -93,6 +107,9 @@ max-width: 300px;
 @media (min-width: 768px) {
   .welcome{
     text-align: center;
+  }
+  .content{
+    padding-left: 20px;
   }
 }
 /*Large devices (desktops and landscape tablets)*/
