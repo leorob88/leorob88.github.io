@@ -127,7 +127,6 @@ transition: transform .2s;
 }
 .contact{
   width: 100%;
-  max-width: 700px;
   margin: 0px;
   padding: 10px;
   margin-bottom: 20px;
