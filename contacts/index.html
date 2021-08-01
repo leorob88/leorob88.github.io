@@ -10,40 +10,37 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
-        <script type="text/javascript">
-            (function() {
-                // https://dashboard.emailjs.com/admin/integration
-                emailjs.init('user_ndFTzzAcRMC6qfWU5uYet');
-            })();
-        </script>
-        <script type="text/javascript">
-            window.onload = function() {
-                document.getElementById('contact-form').addEventListener('submit', function(event) {
-                    event.preventDefault();
-                    // generate a five digit number for the contact_number variable
-                    this.contact_number.value = Math.random() * 100000 | 0;
-                    // these IDs from the previous steps
-                    emailjs.sendForm('service_9rc7so8', 'template_wkx9xyy', this)
-                        .then(function() {
-                            console.log('SUCCESS!');
-                        }, function(error) {
-                            console.log('FAILED...', error);
-                        });
-                });
-            }
-        </script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+    <script type="text/javascript">
+      (function() {
+        // https://dashboard.emailjs.com/admin/integration
+        emailjs.init('user_ndFTzzAcRMC6qfWU5uYet');
+      })();
+    </script>
+    <script type="text/javascript">
+      window.onload = function() {
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+          event.preventDefault();
+          // generate a five digit number for the contact_number variable
+          this.contact_number.value = Math.random() * 100000 | 0;
+          // these IDs from the previous steps
+          emailjs.sendForm('service_9rc7so8', 'template_wkx9xyy', this)
+          .then(function() {
+            console.log('SUCCESS!');
+          }, function(error) {
+            console.log('FAILED...', error);
+          });
+        });
+      }
+    </script>
   </head>
-  <body>
-    <div class="container">
+  <body style="background-color: #8761a7">
+    <div class="container pagebox padded col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-8" style="box-shadow: 15px 20px #68458c">
       <div class="row">
-        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12"><h1>You can contact me:</h1></div>
-        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-          <p>
-            By any means on my <a href="https://www.facebook.com/sunbro.gilgamesh" target="_blank"><i class="fab fa-facebook blue"></i></a><strong> Facebook</strong> page or by email filling this form (data will be only used for contact purposes):
-          </p>
-        </div>
-        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+        <div>
+          <h1>You can contact me:</h1>
+          <p>On my <a href="https://www.facebook.com/sunbro.gilgamesh" target="_blank"><i class="fab fa-facebook blue"></i></a><strong>Facebook</strong> page in many ways or by email filling this form (data will be only used for contact purposes):</p>
+          <div class="centered">
           <form id="contact-form" class="contact">
             <input type="hidden" name="contact_number">
             <label>Name</label>
@@ -57,10 +54,25 @@
             <br>
             <input type="submit" value="Send" class="send">
           </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 foobar">
+      <div class="row pages">
+        <div class="foobar-content" style="background-color: #a86060">
+          <a href="../"><img src="../assets/icon-home.png"></a>
+        </div>
+        <div class="foobar-content" style="background-color: #77a761">
+          <a href="../works"><img src="../assets/icon-works.png"></a>
+        </div>
+        <div class="foobar-content" style="background-color: #61a7a5">
+          <a href="../about"><img src="../assets/icon-about.png"></a>
+        </div>
+        <div class="foobar-content" style="background-color: #6181a7">
+          <a href="../objec"><img src="../assets/icon-objec.png"></a>
         </div>
       </div>
     </div>
   </body>
-</html>
-</body>
 </html>
