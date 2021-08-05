@@ -20,20 +20,21 @@ p{
   font-size: 14px;
 }
 h1{
+  font-size: 33px;
   padding-top: 20px;
   padding-bottom: 20px;
 }
 .blue{
-  color: blue;
+  color: royalblue;
 }
 .red{
   color: red;
 }
 .purple{
-  color: purple;
+  color: mediumslateblue;
 }
 .orange{
-  color: orange;
+  color: tomato;
 }
 a {
   color: white;
@@ -48,29 +49,57 @@ a, a.text-link{
 a:hover {
   color: orange;
 }
-/*----------------BASIC FORMAT ENDS HERE----------------*/
 a > img{
   object-fit: contain;
 }
 .icon{
   margin-top: 16px;
   display: flex;
+  justify-content: center;
 }
 .welcome{
   color: white;
+  text-align: left;
   display: flex;
   justify-content: center;
 }
 .section{
+  width:225px;
+  height:225px;
   text-align: center;
   border-radius: 8px;
+  margin: 3px;
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+.section > a > img{
+  width: 90%;
+  height: 90%;
 }
 .section > a:hover{
   text-decoration: none;
 }
-.orange:hover, .red:hover, .purple:hover, .blue:hover {
-  transform: scale(1.5);
-  z-index: 1;
+.socialbar{
+  z-index: 2;
+  width: 100%;
+  height: 90px;
+  display: flex;
+  justify-content: center;
+  color: white;
+  position: fixed;
+  bottom: 0px;
+  padding-bottom: 10px;
+  background: rgba(51, 51, 51, 0.4);
+}
+.socialbar > .row{
+  width: 241px;
+  position: fixed;
+  bottom: 15px;
+  right: 20px;
+}
+.social{
+  display: flex;
+  justify-content: center;
 }
 .pagebox{
   width: 66%;/*xs page gets adapted*/
@@ -96,25 +125,32 @@ a > img{
   display: flex;
   justify-content: space-around;
 }
-.foobar-content{
-  border-radius: 6px;
+.social-content, .foobar-content{
   width: 37px;
   height: 37px;
   padding: 6px;
   box-shadow: 0px 15px 10px -10px rgba( 0,0,0,0.6);
 }
-.foobar-content > a > img{
+.social-content{
+  padding-top: 7px;
+  border-radius: 18px;
+  font-size: 23px;
+}
+.foobar-content{
+  border-radius: 6px;
+}
+.social-content > a > img, .foobar-content > a > img{
   width: 100%;
   height: 100%;
 }
-.section, .foobar-content, .orange, .red, .purple, .blue{
+.section, .social-content, .foobar-content, .icon-zoom{
 transition: transform .2s;
 }
-.section:hover, .foobar-content:hover, .orange:hover, .red:hover, .purple:hover, .blue:hover {
+.section:hover, .foobar-content:hover, .icon-zoom:hover {
   transform: scale(1.2);
   z-index: 1;
 }
-.foobar-content:hover{
+.social-content:hover, .foobar-content:hover{
   box-shadow: 0px 24px 10px -10px rgba( 0,0,0,0.2);
 }
 .centered{
@@ -158,41 +194,8 @@ transition: transform .2s;
   align-self: center;
 }
 
-/*Extra Small*/
-@media (min-width: 320px) {
-  h1{
-    font-size: 33px;
-  }
-  .welcome{
-    text-align: left;
-  }
-  .section{
-    margin: 3px;
-    padding-top: 18px;
-    padding-bottom: 18px;
-  }
-  .section > a > img{
-    width: 90%;
-    height: 90%;
-  }
-}
 /*Small*/
 @media (min-width: 576px) {
-  h1{
-    font-size: 33px;
-  }
-  .welcome{
-    text-align: left;
-  }
-  .section{
-    margin: 3px;
-    padding-top: 18px;
-    padding-bottom: 18px;
-  }
-  .section > a > img{
-    width: 90%;
-    height: 90%;
-  }
   .pagebox{
     margin-bottom: 106px;
     padding-left: 54px;
@@ -214,20 +217,8 @@ transition: transform .2s;
   .foobar-content:hover{
     box-shadow: 0px 38px 10px -10px rgba( 0,0,0,0.2);
   }
-}
-/*Extra Small, Small and Medium*/
-@media (max-width: 991px) {
-  .icon{
-    justify-content: center;
-  }
-  .section{
-    margin: 4px;
-    padding-top: 12px;
-    padding-bottom: 12px;
-  }
-  .section > a > img{
-    width: 85%;
-    height: 85%;
+  .message{
+    height: 125px;
   }
 }
 /*Medium*/
@@ -239,10 +230,7 @@ transition: transform .2s;
     margin: 4px;
     padding-top: 18px;
     padding-bottom: 18px;
-  }
-  .section > a > img{
-    width: 90%;
-    height: 90%;
+    height: 240px;
   }
   .pagebox{
     margin-bottom: 116px;
@@ -268,17 +256,15 @@ transition: transform .2s;
 }
 /*Large devices (desktops and landscape tablets) and above*/
 @media (min-width: 992px) {
-  .icon{
-    justify-content: flex-end;
-  }
-  .welcome{
-    justify-content: flex-start;
-    text-align: left;
-  }
   .section{
-    margin: 4px;
-    padding-top: 24px;
-    padding-bottom: 24px;
+    margin: 2px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    height: 155px;
+  }
+  .section > a > img{
+    width: 85%;
+    height: 85%;
   }
   .pagebox{
     margin-bottom: 143px;
@@ -304,15 +290,6 @@ transition: transform .2s;
 }
 /*Extra-Large devices (large desktops)*/
 @media (min-width: 1280px) {
-  .section{
-    margin: 2px;
-    padding-top: 12px;
-    padding-bottom: 12px;
-  }
-  .section > a > img{
-    width: 85%;
-    height: 85%;
-  }
   .pagebox{
     margin-bottom: 148px;
     padding-left: 76px;
